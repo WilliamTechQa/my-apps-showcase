@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Cache Cleaner",
+  "version": "2.0",
+  "description": "Limpa o cache, os dados do site e atualiza a aplicação rapidamente.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon-16.png",
+      "32": "icon-32.png",
+      "48": "icon-48.png",
+      "128": "icon-128.png"
+    }
+  },
+  "icons": {
+    "16": "icon-16.png",
+    "32": "icon-32.png",
+    "48": "icon-48.png",
+    "128": "icon-128.png"
+  },
+  "permissions": ["tabs", "browsingData"],
+  "host_permissions": ["<all_urls>"]
+}

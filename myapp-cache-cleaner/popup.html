@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Cache Cleaner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="menu">
+
+    <header class="menu-header">
+      <img src="icon-128.png" alt="" class="menu-logo">
+      <h1>Cache Cleaner</h1>
+    </header>
+
+    <nav class="menu-list">
+
+      <button id="btn-server" class="menu-item">
+        <span class="menu-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <rect x="2" y="3" width="20" height="6" rx="1.5"/>
+            <rect x="2" y="15" width="20" height="6" rx="1.5"/>
+            <circle cx="6" cy="6" r="1" fill="currentColor" stroke="none"/>
+            <circle cx="6" cy="18" r="1" fill="currentColor" stroke="none"/>
+          </svg>
+        </span>
+        <span class="menu-text">
+          <span class="menu-label">Site</span>
+          <span class="menu-desc">Cache e dados do site</span>
+        </span>
+      </button>
+
+      <button id="btn-reload" class="menu-item">
+        <span class="menu-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M21 12a9 9 0 1 1-2.64-6.36"/>
+            <path d="M21 3v6h-6"/>
+          </svg>
+        </span>
+        <span class="menu-text">
+          <span class="menu-label">Reload</span>
+          <span class="menu-desc">Cache do navegador</span>
+        </span>
+      </button>
+
+      <button id="btn-bypass" class="menu-item">
+        <span class="menu-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+          </svg>
+        </span>
+        <span class="menu-text">
+          <span class="menu-label">Bypass</span>
+          <span class="menu-desc">Atualizar versão</span>
+        </span>
+      </button>
+
+      <hr class="menu-divider">
+
+      <button id="btn-full" class="menu-item menu-item--accent">
+        <span class="menu-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
+            <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+          </svg>
+        </span>
+        <span class="menu-text">
+          <span class="menu-label">Limpeza Completa</span>
+          <span class="menu-desc">Site, navegador e bypass</span>
+        </span>
+      </button>
+
+    </nav>
+
+    <p id="status" class="status"></p>
+
+  </div>
+
+  <script src="popup.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2563EB" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Gerador de Arquivos Fictícios</title>
+    <link rel="manifest" href="manifest.webmanifest" />
+    <link rel="icon" href="icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <main class="container">
+        <header class="hero">
+          <div class="hero-brand">
+            <img
+              class="hero-icon"
+              src="icon-192.png"
+              alt=""
+              width="72"
+              height="72"
+              decoding="async"
+            />
+            <div class="hero-copy">
+              <h1>Gerador de Arquivos Fictícios</h1>
+              <p class="subtitle">Gere arquivos fictícios em lote para os seus testes.</p>
+              <p class="subtitle">Salve diretamente em uma pasta local ou baixe tudo compactado em ZIP.</p>
+            </div>
+          </div>
+          <div class="hero-install">
+            <button id="installPwaBtn" class="btn-secondary" type="button">Instalar app</button>
+          </div>
+          <p id="installInfo" class="visually-hidden" hidden></p>
+        </header>
+
+        <section class="layout">
+          <form id="generator-form" class="card panel-main" autocomplete="off">
+            <div class="panel-heading">
+              <h2>Configurações</h2>
+            </div>
+
+            <div id="formAlert" class="form-alert" hidden></div>
+
+            <div class="form-section">
+              <div class="grid-2">
+                <label>
+                  Total de arquivos
+                  <input id="totalFiles" type="number" min="1" value="120" required />
+                </label>
+
+                <label>
+                  Prefixo do arquivo
+                  <input id="prefix" type="text" value="DummyFile" required />
+                </label>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div class="extensions-box">
+                <h3>Extensões dos arquivos</h3>
+                <p class="muted">Marque as extensões que deseja gerar. Você pode adicionar ou remover extensões personalizadas.</p>
+
+                <div id="extensionsList" class="extensions-list"></div>
+
+                <div class="extensions-actions">
+                  <input id="newExtensionInput" type="text" placeholder="Nova extensão (ex.: txt)" />
+                  <button id="addExtensionBtn" class="btn-secondary" type="button">Adicionar</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <div id="destinationBox" class="destination-box is-empty">
+                <div class="destination-main">
+                  <span class="destination-icon" aria-hidden="true"></span>
+                  <div class="destination-copy">
+                    <div class="destination-title-row">
+                      <h3>Destino</h3>
+                      <span id="destinationBadge" class="destination-badge">Não selecionado</span>
+                    </div>
+                    <p id="folderLabel" class="destination-path">Nenhuma pasta selecionada. O sistema usará ZIP.</p>
+                    <p id="destinationHint" class="destination-hint muted">Selecione uma pasta para gravação direta, ou continue com download ZIP.</p>
+                  </div>
+                </div>
+                <div class="actions-inline">
+                  <button id="chooseFolderBtn" class="btn-secondary" type="button">Selecionar pasta</button>
+                  <button id="clearCacheBtn" class="btn-secondary danger" type="button">Limpar cache</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section mode-options">
+              <label class="mode-option">
+                <input id="directOnlyMode" type="checkbox" checked />
+                Somente gravação direta na pasta selecionada (sem compactar ZIP)
+              </label>
+
+              <label class="mode-option">
+                <input id="clearDestinationBeforeGenerate" type="checkbox" checked />
+                Limpar pasta de destino antes de gerar
+              </label>
+
+              <label class="mode-option">
+                <input id="openFolderAfterGenerate" type="checkbox" checked />
+                Abrir pasta após gerar
+              </label>
+            </div>
+
+            <div class="form-actions">
+              <button id="generateBtn" type="submit">Gerar arquivos</button>
+            </div>
+          </form>
+
+          <section class="card status panel-status" aria-live="polite">
+            <div class="status-block status-header">
+              <div class="status-heading-row">
+                <h2>Status</h2>
+                <p id="phaseLabel" class="phase-label">Etapa: Aguardando</p>
+              </div>
+
+              <div class="status-mini-card status-current-card">
+                <span class="status-metric-label">Status atual</span>
+                <p id="statusText" class="status-current-text">Pronto para gerar.</p>
+                <p id="summaryText" class="muted"></p>
+              </div>
+            </div>
+
+            <div class="status-block status-progress">
+              <div class="status-mini-card status-progress-card">
+                <div class="progress-head">
+                  <span class="status-metric-label">Progresso</span>
+                  <p id="progressLabel" class="progress-percent">0%</p>
+                </div>
+                <div class="progress-wrap" aria-label="Progresso da geração">
+                  <div id="progressBar" class="progress-bar"></div>
+                </div>
+              </div>
+
+              <div class="status-metrics-grid">
+                <div class="status-mini-card">
+                  <span class="status-metric-label">Arquivos</span>
+                  <p id="filesMetric" class="status-metric-value">0 / 0</p>
+                </div>
+                <div class="status-mini-card">
+                  <span class="status-metric-label">Decorrido</span>
+                  <p id="elapsedMetric" class="status-metric-value">00:00</p>
+                </div>
+                <div class="status-mini-card">
+                  <span class="status-metric-label">Estimado</span>
+                  <p id="etaMetric" class="status-metric-value">--:--</p>
+                </div>
+                <div class="status-mini-card">
+                  <span class="status-metric-label">Velocidade</span>
+                  <p id="speedMetric" class="status-metric-value">—</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="status-block status-files">
+              <button id="openFolderNowBtn" class="btn-secondary" type="button" hidden>Ver arquivos gerados</button>
+              <details id="generatedFilesPanel" class="generated-files" hidden>
+                <summary>Arquivos gerados</summary>
+                <ul id="generatedFilesList"></ul>
+              </details>
+            </div>
+
+            <div class="status-block status-notes">
+              <ul class="notes">
+                <li>Quando permitido, salva direto na pasta selecionada.</li>
+                <li>Se não houver suporte/permissão, faz fallback para download ZIP.</li>
+                <li>Última pasta escolhida fica em cache para próximas execuções.</li>
+              </ul>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
