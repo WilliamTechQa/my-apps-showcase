@@ -166,10 +166,6 @@ yarn supabase status
 
 ---
 
-## 🐛 Encontrou um Bug?
-
-Ajude a melhorar o projeto! [Reporte aqui](https://github.com/testbeyond/mc-bugs/issues/new)
-
 ---
 
 ## Créditos
