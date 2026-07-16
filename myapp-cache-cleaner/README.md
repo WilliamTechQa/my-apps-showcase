@@ -1,16 +1,31 @@
-# Cache Cleaner
+![Cover](./.github/cover.png)
+
+<div align="center">
+
+**Extensão Chrome para limpar cache do navegador em qualquer site**
+
+[![Chrome Extension](https://img.shields.io/badge/Chrome-Extension-4285F4?style=flat-square&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/)
+[![Manifest V3](https://img.shields.io/badge/Manifest-V3-34A853?style=flat-square&logo=googlechrome&logoColor=white)](https://developer.chrome.com/docs/extensions/develop/migrate)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![HTML/CSS](https://img.shields.io/badge/HTML%2FCSS-UI-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/)
+
+</div>
+
+# 🧹 Cache Cleaner
+
+## 📖 Sobre o Projeto
 
 Extensão para Google Chrome que agiliza a limpeza de cache do navegador em **qualquer site**. Útil quando a página não reflete alterações recentes por cache HTTP, Cache Storage, service workers ou requisições antigas.
 
 ---
 
-## Para que serve
+## 🎯 Para que serve
 
 Durante desenvolvimento, testes ou suporte, é comum um site exibir conteúdo desatualizado. Esta extensão automatiza a limpeza de cache **na aba ativa**: remove os dados em cache do domínio atual, executa a ação escolhida e **mantém você na mesma página**.
 
 ---
 
-## Funcionalidades
+## ⚡ Funcionalidades
 
 | Botão | Descrição | O que faz |
 |---|---|---|
@@ -38,7 +53,7 @@ Para o **domínio da aba ativa** (`origin`), a extensão remove:
 
 ---
 
-## Requisitos
+## 📋 Requisitos
 
 ### Navegador
 
@@ -56,7 +71,7 @@ A extensão foi desenvolvida para **Google Chrome** e funciona sem alterações 
 
 ---
 
-## Página de documentação
+## 📄 Página de documentação
 
 Após ativar o GitHub Pages, a documentação fica disponível em:
 
@@ -66,9 +81,9 @@ Para ativar: no repositório, vá em **Settings → Pages → Source: Deploy fro
 
 ---
 
-## Instalação
+## 🚀 Instalação
 
-### 1. Baixar o projeto
+### 1️⃣ Baixar o projeto
 
 Clone o repositório ou baixe o ZIP:
 
@@ -76,7 +91,7 @@ Clone o repositório ou baixe o ZIP:
 git clone https://github.com/WilliamTechQa/myapp-cache-cleaner.git
 ```
 
-### 2. Carregar no Chrome
+### 2️⃣ Carregar no Chrome
 
 1. Abra `chrome://extensions`
 2. Ative **Modo do desenvolvedor** (canto superior direito)
@@ -84,13 +99,13 @@ git clone https://github.com/WilliamTechQa/myapp-cache-cleaner.git
 4. Selecione a pasta do projeto
 5. A extensão **Cache Cleaner** aparecerá na barra de ferramentas
 
-### 3. Fixar na barra (opcional)
+### 3️⃣ Fixar na barra (opcional)
 
 Clique no ícone de quebra-cabeça na barra do Chrome e fixe o **Cache Cleaner** para acesso rápido.
 
 ---
 
-## Como usar
+## 💡 Como usar
 
 1. Abra a página que deseja testar
 2. Clique no ícone da extensão na barra do Chrome
@@ -107,7 +122,7 @@ Clique no ícone de quebra-cabeça na barra do Chrome e fixe o **Cache Cleaner**
 
 ---
 
-## Estrutura do projeto
+## 📁 Estrutura do projeto
 
 ```
 myapp-cache-cleaner/
@@ -124,7 +139,7 @@ myapp-cache-cleaner/
 
 ---
 
-## Permissões
+## 🔐 Permissões
 
 | Permissão | Motivo |
 |---|---|
@@ -134,7 +149,7 @@ myapp-cache-cleaner/
 
 ---
 
-## FAQ
+## ❓ FAQ
 
 ### A extensão funciona em qualquer site?
 
@@ -154,7 +169,7 @@ Não. Cookies, `localStorage` e `sessionStorage` **não** são removidos por pad
 
 ---
 
-## Tecnologias
+## 🛠️ Tecnologias
 
 - Chrome Extension Manifest V3
 - HTML, CSS e JavaScript (vanilla)
@@ -163,13 +178,13 @@ Não. Cookies, `localStorage` e `sessionStorage` **não** são removidos por pad
 
 ---
 
-## Licença
+## 📜 Licença
 
 Uso livre para fins pessoais e profissionais.
 
 ---
 
-## English
+## 🇺🇸 English
 
 Chrome extension that speeds up browser cache cleanup on **any site**. Useful when a page shows stale content due to HTTP cache, Cache Storage, service workers, or old requests.
 

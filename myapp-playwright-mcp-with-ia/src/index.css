@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 45 20% 96%;
+    --foreground: 20 20% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 20 20% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 20% 15%;
+
+    --primary: 42 100% 50%;
+    --primary-foreground: 20 20% 15%;
+
+    --secondary: 45 30% 92%;
+    --secondary-foreground: 20 20% 25%;
+
+    --muted: 45 15% 90%;
+    --muted-foreground: 20 10% 45%;
+
+    --accent: 4 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --info: 210 80% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --warning: 38 95% 55%;
+    --warning-foreground: 20 20% 15%;
+
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 42 100% 50%;
+
+    --radius: 1rem;
+
+    --shadow-soft: 0 4px 20px -4px hsl(20 20% 15% / 0.08);
+    --shadow-card: 0 8px 30px -8px hsl(20 20% 15% / 0.12);
+    --shadow-elevated: 0 12px 40px -10px hsl(20 20% 15% / 0.18);
+
+    --font-display: 'Fredoka', sans-serif;
+    --font-body: 'Nunito', sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 20 15% 10%;
+    --foreground: 45 20% 95%;
+
+    --card: 20 15% 14%;
+    --card-foreground: 45 20% 95%;
+
+    --popover: 20 15% 14%;
+    --popover-foreground: 45 20% 95%;
+
+    --primary: 42 100% 50%;
+    --primary-foreground: 20 20% 10%;
+
+    --secondary: 20 15% 20%;
+    --secondary-foreground: 45 20% 90%;
+
+    --muted: 20 15% 18%;
+    --muted-foreground: 45 10% 60%;
+
+    --accent: 4 85% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 70% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --info: 210 80% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --warning: 38 95% 55%;
+    --warning-foreground: 20 20% 10%;
+
+    --border: 20 15% 22%;
+    --input: 20 15% 22%;
+    --ring: 42 100% 50%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .card-elevated {
+    @apply bg-card rounded-2xl;
+    box-shadow: var(--shadow-card);
+  }
+
+  .card-soft {
+    @apply bg-card rounded-xl;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground font-semibold rounded-full px-8 py-4 transition-all duration-200;
+  }
+
+  .btn-primary:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.4);
+  }
+
+  .btn-primary:active {
+    @apply scale-[0.98];
+  }
+
+  .btn-accent {
+    @apply bg-accent text-accent-foreground font-semibold rounded-full px-8 py-4 transition-all duration-200;
+  }
+
+  .btn-accent:hover {
+    @apply scale-[1.02];
+    box-shadow: 0 8px 25px -5px hsl(var(--accent) / 0.4);
+  }
+
+  .btn-accent:active {
+    @apply scale-[0.98];
+  }
+
+  .btn-outline {
+    @apply border-2 border-border bg-transparent font-semibold rounded-full px-8 py-4 transition-all duration-200;
+  }
+
+  .btn-outline:hover {
+    @apply bg-secondary scale-[1.02];
+  }
+
+  .touch-target {
+    @apply min-h-[48px] min-w-[48px];
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.5s ease-out forwards;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .animate-pulse-soft {
+    animation: pulseSoft 2s ease-in-out infinite;
+  }
+
+  .animate-spin-slow {
+    animation: spin 2s linear infinite;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSoft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

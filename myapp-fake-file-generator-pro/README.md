@@ -1,8 +1,25 @@
-# Gerador de Arquivos Fictícios (HTML/CSS/JS)
+![Cover](./.github/cover.png)
+
+<div align="center">
+
+**App web (PWA) para gerar arquivos fictícios em lote para testes**
+
+[![HTML5](https://img.shields.io/badge/HTML5-UI-E34F26?style=flat-square&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-Styling-1572B6?style=flat-square&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+[![PWA](https://img.shields.io/badge/PWA-Installable-5A0FC8?style=flat-square&logo=pwa&logoColor=white)](https://web.dev/progressive-web-apps/)
+
+</div>
+
+# 📁 Gerador de Arquivos Fictícios
+
+## 📖 Sobre o Projeto
 
 Projeto web para gerar arquivos fictícios em lote para testes. Permite salvar diretamente em uma pasta local ou baixar tudo compactado em ZIP, no mesmo padrão do script `.bat`.
 
-## Como usar
+---
+
+## 🚀 Como usar
 
 1. Rode em servidor local (PWA não funciona em `file://`). Exemplo:
    - `python -m http.server 5500`
@@ -21,7 +38,9 @@ Projeto web para gerar arquivos fictícios em lote para testes. Permite salvar d
 7. Clique em **Gerar arquivos**.
 8. Se disponível, clique em **Instalar app** para instalar como PWA.
 
-## Saída
+---
+
+## 📦 Saída
 
 - Modo 1: grava diretamente na pasta selecionada, dentro de `ArquivosDiarios`.
 - Modo 2: baixa um ZIP com pasta `ArquivosDiarios` (quando o modo sem ZIP estiver desmarcado e a gravação direta não for usada).
@@ -29,7 +48,9 @@ Projeto web para gerar arquivos fictícios em lote para testes. Permite salvar d
 - Conteúdo interno (não-imagem): `Teste arquivo fictício <guid> - <ddMMyyyyHHmmss>`.
 - Extensões de imagem (`png`, `jpg`, `bmp`, `gif`, etc.): geram conteúdo de imagem fictícia (não o texto acima).
 
-## Cache e permissões
+---
+
+## 💾 Cache e permissões
 
 - O app salva em cache as configurações do formulário.
 - O catálogo de extensões (marcadas e personalizadas) também é salvo em cache.
@@ -41,12 +62,16 @@ Projeto web para gerar arquivos fictícios em lote para testes. Permite salvar d
 - Se o modo **sem ZIP** estiver ativo e não houver pasta com permissão de escrita, a geração falha (não há fallback para ZIP).
 - O botão **Limpar cache** remove preferências e referência da pasta salva.
 
-## Compatibilidade
+---
+
+## 🌐 Compatibilidade
 
 - Para gravação direta em pasta, use navegador com suporte à File System Access API (ex.: versões recentes de Chromium/Edge).
 - Quando não houver suporte e o modo sem ZIP estiver desmarcado, o fluxo de ZIP continua funcionando normalmente.
 
-## PWA
+---
+
+## 📱 PWA
 
 - O projeto inclui `manifest.webmanifest` e `sw.js`.
 - O botão **Instalar app** aparece quando o navegador permite `beforeinstallprompt`.
@@ -54,7 +79,7 @@ Projeto web para gerar arquivos fictícios em lote para testes. Permite salvar d
 
 ---
 
-## English
+## 🇺🇸 English
 
 Web app (PWA) for generating dummy files in bulk for testing. Save directly to a local folder or download everything as a ZIP.
 
