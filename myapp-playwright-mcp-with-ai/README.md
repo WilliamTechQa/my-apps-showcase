@@ -166,8 +166,6 @@ yarn supabase status
 
 ---
 
----
-
 ## Créditos
 
 A aplicação base **McBugs** é material do curso *"Testando o Totem do Méqui com IA"*, de **[Fernando Papito](https://testbeyond.com)** / **Projeto TestBeyond**. Este repositório documenta meu trabalho de QA com Playwright, MCP e IA.
@@ -213,6 +211,3 @@ yarn dev
 
 Open [http://localhost:8080](http://localhost:8080).
 
-### Credits
-
-The base **McBugs** application is course material from *"Testando o Totem do Méqui com IA"* by **[Fernando Papito](https://testbeyond.com)** / **TestBeyond Project**. This repository documents my QA work with Playwright, MCP, and AI.
