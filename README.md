@@ -10,7 +10,7 @@ Cada pasta é um app independente, com seu próprio README, repositório e instr
 |---|---|
 | [myapp-cache-cleaner](./myapp-cache-cleaner) | Extensão Chrome para limpar cache do navegador em qualquer site |
 | [myapp-fake-file-generator-pro](./myapp-fake-file-generator-pro) | App web (PWA) para gerar arquivos fictícios em lote para testes |
-| [myapp-playwright-mcp-with-ia](./myapp-playwright-mcp-with-ia) | Totem McBugs com testes E2E via Playwright, MCP e IA (TestBeyond) |
+| [myapp-playwright-mcp-with-ai](./myapp-playwright-mcp-with-ai) | Totem McBugs com testes E2E via Playwright, MCP e IA (TestBeyond) |
 
 ---
 

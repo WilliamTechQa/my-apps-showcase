@@ -171,3 +171,48 @@ yarn supabase status
 ## Créditos
 
 A aplicação base **McBugs** é material do curso *"Testando o Totem do Méqui com IA"*, de **[Fernando Papito](https://testbeyond.com)** / **Projeto TestBeyond**. Este repositório documenta meu trabalho de QA com Playwright, MCP e IA.
+
+---
+
+## 🇺🇸 English
+
+Interactive self-service kiosk system (**McBugs**) that simulates a McDonald's-style restaurant ordering experience. This repository documents my QA work with **Playwright**, **MCP**, and **AI-assisted testing**.
+
+### About the project
+
+**McBugs** is a full-stack web app built with Vite, React, TypeScript, and Supabase. It includes end-to-end test automation for dine-in and takeaway flows, test case documentation, and AI prompts for QA workflows.
+
+### Tech stack
+
+- **Vite** — build tool
+- **React 18** — UI
+- **TypeScript** — type safety
+- **Supabase** — backend and PostgreSQL database
+- **Playwright** — E2E test automation
+
+### Requirements
+
+- Node.js ≥ 18.0.0
+- Yarn ≥ 1.22.0
+- Git
+- Supabase account (for database)
+
+### Quick start
+
+```bash
+git clone <your-repo-url>
+cd myapp-playwright-mcp-with-ai
+yarn install
+```
+
+Create a `.env.local` file with your Supabase credentials, then run:
+
+```bash
+yarn dev
+```
+
+Open [http://localhost:8080](http://localhost:8080).
+
+### Credits
+
+The base **McBugs** application is course material from *"Testando o Totem do Méqui com IA"* by **[Fernando Papito](https://testbeyond.com)** / **TestBeyond Project**. This repository documents my QA work with Playwright, MCP, and AI.
